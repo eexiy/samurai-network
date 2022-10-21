@@ -1,0 +1,71 @@
+.side__bar {
+  position: fixed;
+  background: rgb(255, 255, 255);
+  height: 100vh;
+  z-index: 1;
+  width: 100px;
+  transition: width 0.2s linear;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.side__bar:hover {
+  width: 280px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #555353;
+  font-size: 14px;
+  margin-left: 5px;
+  transition: .3s;
+  width: 250px;
+  padding: 10px;
+  overflow: hidden;
+  transition: all .5s ease;
+}
+
+.item:hover {
+  background: #eee;
+}
+
+.side__barLogo {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 30px 10px;
+  overflow: hidden;
+}
+
+
+.side__barLogo img {
+  width: 80px;
+}
+
+.side__barLogo span {
+  font-weight: 700;
+  padding: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #555353;
+}
+
+.side__barIcon {
+  width: 70px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.side__barLogOut {
+  position: absolute;
+  bottom: 10px;
+}
+
+.item span {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
