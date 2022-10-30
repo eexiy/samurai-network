@@ -1,13 +1,9 @@
 import React from "react"
-import Users from "./Users"
 import { connect } from "react-redux";
-import {
-    follow,
-    setCurrentPage,
-    unfollow,
-    toggleFollowingProgress,
-    requestUsers,
-} from "../../redux/usersReducer";
+// @ts-ignore
+import Users from "./Users.tsx";
+// @ts-ignore
+import { follow, setCurrentPage, unfollow, toggleFollowingProgress, requestUsers, } from "../../redux/usersReducer.ts";
 import Preloader from "../../common/Preloader/Preloader";
 import {
     getUsers,
@@ -18,14 +14,30 @@ import {
     getPageSize,
     getTotalUsersCount
 } from "../../redux/usersSelectors";
+import { UserType } from "../../types/types";
 
-class UsersContainer extends React.Component {
+type PropsType = {
+    currentPage: number
+    pageSize: number
+    isFetching: boolean
+    totalUsersCount: number
+    isAuth: boolean
+    users: Array<UserType>
+    followingInProgress: Array<number>
+
+    unfollow: () => void
+    follow: () => void
+    requestUsers: (currentPage: number, pageSize: number) => void
+}
+
+class UsersContainer extends React.Component<PropsType> {
     componentDidMount() {
         this.props.requestUsers(this.props.currentPage, this.props.pageSize)
     }
 
-    onPageChange = (pageNumber) => {
-        this.props.requestUsers(pageNumber, this.props.pageSize)
+    onPageChange = (pageNumber: number) => {
+        const {pageSize} = this.props
+        this.props.requestUsers(pageNumber, pageSize)
     }
 
     render() {
@@ -60,6 +72,9 @@ class UsersContainer extends React.Component {
 //         isAuth: state.auth.isAuth
 //     }
 // }
+
+
+// MSTP with selectors
 const mapStateToProps = (state) => {
     return {
         users: getUsers(state),

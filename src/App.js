@@ -2,12 +2,12 @@ import React, { Suspense } from 'react';
 import './App.css';
 import { Route, Routes } from "react-router-dom";
 import { connect } from 'react-redux';
-import { initializeApp } from './redux/appReducer';
+import { initializeApp } from './redux/appReducer.ts';
 import Preloader from './common/Preloader/Preloader';
 import SideBarContainer from './components/Sidebar/SideBarContainer';
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
+const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer.tsx'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 const Login = React.lazy(() => import('./components/Login/Login'));
 

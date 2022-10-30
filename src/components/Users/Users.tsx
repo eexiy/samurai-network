@@ -1,9 +1,24 @@
+// @ts-ignore
 import s from './Users.module.css'
-// import { Navigate } from 'react-router-dom'
-import Paginator from '../../common/Preloader/Paginator/Paginator'
+// @ts-ignore
+import Paginator from '../../common/Preloader/Paginator/Paginator.tsx'
 import User from './User'
+import { UserType } from '../../types/types'
+import React, { FC } from 'react'
 
-const Users = ({ isAuth, totalUsersCount, pageSize, currentPage, onPageChange, ...props }) => {
+type PropsType = {
+    isAuth: boolean
+    pageSize: number
+    currentPage: number
+    totalUsersCount: number
+    users: Array<UserType>
+    followingInProgress: Array<number>
+    onPageChange: (pageNumber: number) => void
+    unfollow: () => void
+    follow: () => void
+}
+
+const Users: FC<PropsType> = ({ isAuth, totalUsersCount, pageSize, currentPage, onPageChange, users, ...props }) => {
 
     return (
         <div className={s.users}>
@@ -17,7 +32,7 @@ const Users = ({ isAuth, totalUsersCount, pageSize, currentPage, onPageChange, .
             </div>
             <div className={s.usersCard}>
                 {
-                    props.users.map(user => <User
+                    users.map(user => <User
                         key={user.id}
                         user={user}
                         followingInProgress={props.followingInProgress}

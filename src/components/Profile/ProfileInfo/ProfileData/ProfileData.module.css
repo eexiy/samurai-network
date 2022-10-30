@@ -1,0 +1,156 @@
+.profileData {
+    margin-top: 36px;
+}
+
+.profileDataName {
+    color: #000000;
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.profileDataList {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.profileDataListTitle {
+    display: flex;
+}
+
+.profileDataListTitle h4 {
+    max-width: 170px;
+    width: 100%;
+    color: #464646;
+
+}
+
+.profileDataListTitle span {
+    margin-bottom: 12px;
+    color: #6d6c6c;
+    font-size: 18px;
+}
+
+/* start profile data form */
+
+.profileDataForm {
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    background: white;
+    box-shadow: 0px 0px 22px -1px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.profileDataFormInf {
+    display: flex;
+}
+
+.profileDataFormTitle {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #c0c0c0;
+    text-align: center;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #6d6c6c;
+}
+
+.profileDataFormLeft {
+    margin: 0 20px;
+}
+
+.profileDataFormName,
+.profileDataFormSkills,
+.profileDataFormAboutMe,
+.contacts {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 25px 0;
+}
+
+
+.profileDataFormName input,
+.profileDataFormSkills input,
+.profileDataFormAboutMe input,
+.contacts input {
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.profileDataFormName label,
+.profileDataFormSkills label,
+.profileDataFormAboutMe label,
+.contacts label {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    transform: translateY(-30%);
+    pointer-events: none;
+    transition: .8s;
+    color: #adadad;
+}
+
+.profileDataFormName span::before,
+.profileDataFormSkills span::before,
+.profileDataFormAboutMe span::before,
+.contacts span::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .6s;
+}
+
+.profileDataFormName input:focus~label,
+.profileDataFormName input:not([value=""])~label,
+.profileDataFormSkills input:focus~label,
+.profileDataFormSkills input:not([value=""])~label,
+.profileDataFormAboutMe input:focus~label,
+.profileDataFormAboutMe input:not([value=""])~label,
+.contacts input:focus~label,
+.contacts input:not([value=""])~label {
+    top: -12px;
+    color: #2691d9;
+}
+
+.profileDataFormName input:focus~span::before,
+.profileDataFormSkills input:focus~span::before,
+.profileDataFormAboutMe input:focus~span::before,
+.contacts input:focus~span::before {
+    width: 100%;
+}
+
+.profileDataFormCheckBox label {
+    color: #575757;
+}
+
+.btnFile,
+.btnSave,
+.profileDataBtn,
+.btnCancel {
+    background: #b3b3b3;
+    border: none;
+    text-transform: uppercase;
+    padding: 8px 24px;
+    border-radius: 6px;
+    color: #181818;
+    margin-top: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnCancel {
+    margin-left: 10px;
+}
+
+.profileDataFormRight {
+    margin-right: 20px;
+}

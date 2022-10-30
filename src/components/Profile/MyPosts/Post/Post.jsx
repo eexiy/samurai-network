@@ -1,10 +1,15 @@
 import s from './Post.module.css'
+import userPhoto from '../../../../assets/images/avaLogo.jpg'
 
 const Post = (props) => {
     return (
         <div className={s.item}>
-            <img src="https://www.kibrispdr.org/data/999/avatar-logo-template-1.jpg" alt="" />
-            {props.message}
+            <div className={s.post}>
+                <img src={userPhoto} alt="" />
+                <div>
+                    {props.message}
+                </div>
+            </div>
             <div>
                 <span>Like</span> {props.likes}
             </div>

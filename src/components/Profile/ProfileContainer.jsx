@@ -1,7 +1,7 @@
 import React from 'react';
 import Profile from './Profile';
 import { connect } from 'react-redux';
-import { getUserProfile, getStatus, savePhoto, updateStatus, saveProfileInfo } from '../../redux/profileReducer'
+import { getUserProfile, getStatus, savePhoto, updateStatus, saveProfileInfo } from '../../redux/profileReducer.ts'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { compose } from 'redux';
 import { Navigate } from "react-router-dom";
@@ -14,20 +14,6 @@ class ProfileContainer extends React.Component {
             isShowMyProfile: true
         }
     }
-
-    // refreshProfile = () => {
-    //     let userId = this.props.match.params.userId
-    //     if (!userId) {
-    //         this.props.match.params.userId = 6724
-    //     }
-    //     this.props.getUserProfile(userId)
-    //     console.log(this.props.getUserProfile(userId))
-    //     this.props.getStatus(userId)
-    // }
-
-    // componentDidMount() {
-    //     this.refreshProfile()
-    // }
 
     componentDidMount() {
 

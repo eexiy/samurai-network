@@ -1,5 +1,23 @@
 .item img {
-    max-width: 80px;
+    max-width: 60px;
     width: 100%;
     border-radius: 50%;
+}
+
+.item {
+    padding: 10px;
+    margin-bottom: 5px;
+    background: #dddddd;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+}
+
+.post img {
+    margin-right: 20px;
+    margin-bottom: 10px;
 }

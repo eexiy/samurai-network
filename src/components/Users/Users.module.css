@@ -1,5 +1,7 @@
 .users{
     margin-left: 12px;
+    position: absolute;
+    left: 100px;
 }
 
 .usersCard {
@@ -34,7 +36,7 @@
     text-transform: capitalize;
 }
 
-.user__profileBtn button {
+.followBtn, .unfollowBtn {
     margin-top: 30px;
     margin-bottom: 20px;
     padding: 8px 24px;
@@ -48,6 +50,14 @@
     border-radius: 18px;
 }
 
-.user__profileBtn button:hover {
+
+.unfollowBtn {
+    background-color: #9c4646;
+}
+.unfollowBtn:hover {
+    background-color: #9c2323;
+}
+
+.followBtn:hover {
    background-color: #4a7e9c;
 }

@@ -1,4 +1,6 @@
 import { Field, Form, Formik } from "formik";
+import s from './MyPosts.module.css'
+import {AiOutlineSend} from 'react-icons/ai'
 
 const AddPostForm = (props) => {
 
@@ -20,15 +22,15 @@ const AddPostForm = (props) => {
         >
             {() => (
                 <Form>
-                    <div>
+                    <div className={s.myPostField}>
                         <Field
                             name={'newPostText'}
                             as={'textarea'}
                             placeholder={'enter text'}
                         />
+                        <button type={'submit'}><AiOutlineSend /></button>
                     </div>
 
-                    <button type={'submit'}>Send</button>
                 </Form>
             )}
         </Formik>

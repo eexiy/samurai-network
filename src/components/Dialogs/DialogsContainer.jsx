@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addMessageActionCreator } from '../../redux/dialogsReducer';
+import { addMessageActionCreator } from '../../redux/dialogsReducer.ts';
 import Dialogs from './Dialogs';
 
 const mapStateToProps = (state) => {

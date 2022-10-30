@@ -11,11 +11,11 @@ const User = ({ user, followingInProgress, unfollow, follow }) => {
                 </NavLink>
             </div>
             <h4 className={s.user__profileName}> {user.name} </h4>
-            <div className={s.user__profileBtn}>
+            <div>
                 {user.followed
-                    ? <button disabled={followingInProgress.some(id => id === user.id)}
+                    ? <button className={s.unfollowBtn} disabled={followingInProgress.some(id => id === user.id)}
                         onClick={() => { unfollow(user.id) }}>Unfollow</button>
-                    : <button disabled={followingInProgress.some(id => id === user.id)}
+                    : <button className={s.followBtn} disabled={followingInProgress.some(id => id === user.id)}
                         onClick={() => { follow(user.id) }}>Follow</button>}
             </div>
         </div>
